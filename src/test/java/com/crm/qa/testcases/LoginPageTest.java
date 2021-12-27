@@ -1,5 +1,9 @@
 package com.crm.qa.testcases;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,6 +21,7 @@ public class LoginPageTest extends TestBase{
 		super();
 	}
 	
+	
 	@BeforeMethod
 	public void setUp(){
 		initialization();
@@ -26,13 +31,13 @@ public class LoginPageTest extends TestBase{
 	@Test(priority=1)
 	public void loginPageTitleTest(){
 		String title = loginPage.validateLoginPageTitle();
-		Assert.assertEquals(title, "#1 Free CRM for Any Business: Online Customer Relationship Software");
+		AssertJUnit.assertEquals(title, "#1 Free CRM for Any Business: Online Customer Relationship Software");
 	}
 	
 	@Test(priority=2)
 	public void crmLogoImageTest(){
 		boolean flag = loginPage.validateCRMImage();
-		Assert.assertTrue(flag);
+		AssertJUnit.assertTrue(flag);
 	}
 	
 	@Test(priority=3)
@@ -42,6 +47,7 @@ public class LoginPageTest extends TestBase{
 	
 	
 	
+
 	@AfterMethod
 	public void tearDown(){
 		driver.quit();

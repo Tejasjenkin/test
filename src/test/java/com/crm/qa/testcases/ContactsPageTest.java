@@ -5,6 +5,10 @@
 
 package com.crm.qa.testcases;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -42,6 +46,7 @@ public class ContactsPageTest extends TestBase{
 	
 	
 	@BeforeMethod
+	
 	public void setUp() throws InterruptedException {
 		
 		initialization();
@@ -56,7 +61,7 @@ public class ContactsPageTest extends TestBase{
 	
 	@Test(priority=1)
 	public void verifyContactsPageLabel(){
-		Assert.assertTrue(contactsPage.verifyContactsLabel(), "contacts label is missing on the page");
+		AssertJUnit.assertTrue(contactsPage.verifyContactsLabel(), "contacts label is missing on the page");
 	}
 	
 	@Test(priority=2)
@@ -87,6 +92,7 @@ public class ContactsPageTest extends TestBase{
 	}
 	
 	
+
 
 	@AfterMethod
 	public void tearDown(){

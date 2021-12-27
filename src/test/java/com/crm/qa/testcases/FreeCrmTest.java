@@ -1,5 +1,8 @@
 package com.crm.qa.testcases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.io.File;
 import java.io.IOException;
 
@@ -18,6 +21,7 @@ public class FreeCrmTest {
 	static WebDriver driver;
 	static JavascriptExecutor js;
 
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");
@@ -34,11 +38,11 @@ public class FreeCrmTest {
 
 		if (title.equals("Free CRM software in the cloud powers sales and customer serviceQQQQ")) {
 			getRunTimeInfoMessage("info", "title is correct!! YAY!!!");
-			Assert.assertTrue(true);
+			AssertJUnit.assertTrue(true);
 		} else {
 			getRunTimeInfoMessage("error", "title is not correct!! BUG BUG BUG!!!");
 			takeScreenshot("freecrmloginpage");
-			Assert.assertTrue(false);
+			AssertJUnit.assertTrue(false);
 		}
 
 	}
